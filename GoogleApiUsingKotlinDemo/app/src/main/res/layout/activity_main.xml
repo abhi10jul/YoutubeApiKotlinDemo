@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                android:layout_weight=".4"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/play_your_video"
+                android:textColor="#000"/>
+        <Button
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".6"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="Add Playlist"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_height="wrap_content"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_margin="5dp"
+                android:layout_weight=".2"
+                android:id="@+id/telYoutubeUrl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:id="@+id/etYoutubeUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Enter your Youtube url or only youtube video Id i.e xCMc8ntfL1k"/>
+        </android.support.design.widget.TextInputLayout>
+        <ImageButton
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@null"
+                android:id="@+id/ibSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:src="@drawable/ic_search_black_24dp"/>
+
+    </LinearLayout>
+
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hint: After https://www.youtube.com/watch?v=YOUR YOUTUBE VIDEO ID "
+            android:textSize="10sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="5dp"/>
+
+    <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_view"
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+    </com.google.android.youtube.player.YouTubePlayerView>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+        <Button
+                android:id="@+id/btnPlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Play"
+                android:layout_weight="1"/>
+        <Button
+                android:id="@+id/btnPause"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pause"
+                android:layout_weight="1"/>
+        <Button
+                android:id="@+id/btnFullScreen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FullScreen"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/recylerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>
